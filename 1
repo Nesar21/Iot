@@ -1,0 +1,43 @@
+----------Temperature and humidity Sensor
+
+#define SENSOR_PIN A0  // Signal pin connected to A0
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int analogValue = analogRead(SENSOR_PIN);
+  float voltage = analogValue * (5.0 / 1023.0);
+
+  // Very rough conversion placeholders:
+  float temperature = voltage * 100.0;        // e.g., 0.25V = 25°C
+  float humidity = (voltage / 5.0) * 100.0;   // e.g., 2.5V = 50%
+
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.print(" °C\t");
+
+  Serial.print("Humidity: ");
+  Serial.print(humidity);
+  Serial.println(" %");
+
+  delay(2000);
+}
+
+---------- HEART BEAT SENSOR
+
+#define HEART_PIN A0  // Signal pin connected to analog A0
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int pulseValue = analogRead(HEART_PIN);
+
+  Serial.print("Heart Sensor Value: ");
+  Serial.println(pulseValue);
+
+  delay(10);  // Fast sampling for waveform shape
+}
