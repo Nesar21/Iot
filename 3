@@ -1,0 +1,53 @@
+-------Touch sensor
+
+#define TOUCH_PIN 2  // OUT pin of touch sensor
+
+void setup() {
+  pinMode(TOUCH_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(TOUCH_PIN) == HIGH) {
+    Serial.println("Touch Detected!");
+  } else {
+    Serial.println("No Touch");
+  }
+  delay(200);
+}
+
+-------Tracking sensor
+
+#define TRACK_PIN 2  // OUT pin of tracking sensor
+
+void setup() {
+  pinMode(TRACK_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(TRACK_PIN) == LOW) {
+    Serial.println("Black Line Detected");
+  } else {
+    Serial.println("White Surface");
+  }
+  delay(200);
+}
+
+--------Tap sensor
+
+#define TAP_PIN 2  // OUT pin of tap sensor
+
+void setup() {
+  pinMode(TAP_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(TAP_PIN) == HIGH) {
+    Serial.println("Tap Detected!");
+  } else {
+    Serial.println("No tap");
+  }
+  delay(200);
+}
