@@ -1,0 +1,31 @@
+----------Ball Switch
+
+import RPi.GPIO as GPIO
+import time
+
+pin = 4
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+while True:
+    if GPIO.input(pin):
+        print("Movement Detected")
+    else:
+        print("No Movement")
+    time.sleep(0.2)
+
+--------Tap Sensor
+
+import RPi.GPIO as GPIO
+import time
+
+pin = 4
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+while True:
+    if GPIO.input(pin):
+        print("Tap Detected")
+    else:
+        print("No Tap")
+    time.sleep(0.2)
