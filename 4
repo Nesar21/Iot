@@ -1,0 +1,40 @@
+----------Mercury tilt switch
+
+#define TILT_PIN 2  // OUT pin of tilt switch → D2
+
+void setup() {
+  pinMode(TILT_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int tilt = digitalRead(TILT_PIN);
+
+  if (tilt == HIGH) {
+    Serial.println("Tilt Detected!");
+  } else {
+    Serial.println("Stable Position");
+  }
+
+  delay(200);
+}
+
+
+--------Laser emitter
+
+#define LASER_PIN 2  // S pin of laser module → D2
+
+void setup() {
+  pinMode(LASER_PIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(LASER_PIN, HIGH);  // Turn laser ON
+  Serial.println("Laser ON");
+  delay(1000);
+
+  digitalWrite(LASER_PIN, LOW);   // Turn laser OFF
+  Serial.println("Laser OFF");
+  delay(1000);
+}
