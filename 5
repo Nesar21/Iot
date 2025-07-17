@@ -1,0 +1,37 @@
+----------Button
+
+#define BUTTON_PIN 2  // OUT pin of button → D2
+
+void setup() {
+  pinMode(BUTTON_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(BUTTON_PIN) == HIGH) {
+    Serial.println("Button Pressed!");
+  } else {
+    Serial.println("Button Released");
+  }
+
+  delay(200);
+}
+
+-------IR emitter
+
+#define IR_PIN 2  // S pin of IR emitter → D2
+
+void setup() {
+  pinMode(IR_PIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(IR_PIN, HIGH);  // IR LED ON
+  Serial.println("IR ON");
+  delay(1000);
+
+  digitalWrite(IR_PIN, LOW);   // IR LED OFF
+  Serial.println("IR OFF");
+  delay(1000);
+}
