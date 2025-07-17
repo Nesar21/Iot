@@ -5,7 +5,7 @@ import time
 
 pin = 4
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN)
+GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
     if GPIO.input(pin):
@@ -21,7 +21,7 @@ import time
 
 pin = 4
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN)
+GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
     if GPIO.input(pin) == 0:
