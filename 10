@@ -5,15 +5,14 @@ import time
 
 pin = 4
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(pin, GPIO.IN)
+GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
     if GPIO.input(pin):
         print("Tilt Detected")
     else:
-        print("Stable")
+        print("No Tilt")
     time.sleep(0.2)
-
 
 --------Laser emitter
 
