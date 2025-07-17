@@ -1,0 +1,56 @@
+-------------Fire Sensor
+
+#define FIRE_SENSOR_PIN 2
+
+void setup() {
+  pinMode(FIRE_SENSOR_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int fireStatus = digitalRead(FIRE_SENSOR_PIN);
+
+  if (fireStatus == LOW) {
+    Serial.println("Fire Detected!");
+  } else {
+    Serial.println("No Fire");
+  }
+
+  delay(500);
+}
+
+------------Big sound/small sound sensor
+
+#define BIG_SOUND_PIN 2  // D pin of Big Sound Sensor → D2
+
+void setup() {
+  pinMode(BIG_SOUND_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(BIG_SOUND_PIN) == HIGH) {
+    Serial.println("Big Sound Detected!");
+  } else {
+    Serial.println("No Big Sound");
+  }
+
+  delay(200);
+}
+
+#define SMALL_SOUND_PIN 3  // D pin of Small Sound Sensor → D3
+
+void setup() {
+  pinMode(SMALL_SOUND_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (digitalRead(SMALL_SOUND_PIN) == HIGH) {
+    Serial.println("Small Sound Detected!");
+  } else {
+    Serial.println("No Small Sound");
+  }
+
+  delay(200);
+}
